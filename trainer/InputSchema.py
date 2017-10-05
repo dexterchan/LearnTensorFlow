@@ -58,6 +58,8 @@ class SchemaPrep:
         self.defineDefaultLabel(fileName)
 
 
+
+
         return
 
     def defineDefaultLabel(self,fileName):
@@ -92,6 +94,15 @@ class SchemaPrep:
         LABELS = self.encoder.classes_.tolist()
         return yy,LABELS
 
+    def prepareSampleTest(self,test_x,test_y):
+        dimx, dimy = test_x.shape
+        choice = np.random.randint(dimx)
+        sampleObj = test_x.iloc[choice,:]
+        sampleans = test_y.iloc[choice]
+        return sampleObj,sampleans
+
+
+
     def outputDataSet(self,filePrefix):
 
         outputBuffer=None
@@ -105,4 +116,14 @@ class SchemaPrep:
         testFileName=str(filePrefix) + str(".test.csv")
         outputBuffer.to_csv(testFileName,index=False)
 
+
+        obj, result=self.prepareSampleTest(self.test_x,self.test_y)
+        #prepare sample output
+        sampleObj = dict(list(zip (self.CSV_COLUMNS,obj.tolist())))
+        import json
+        jsonStr = json.dumps(sampleObj)
+
+        sampleDataFile=str(filePrefix)+ str(".sampledata.")+result+str(".json")
+        with open(sampleDataFile, 'w') as outfile:
+            json.dump(sampleObj, outfile)
         return
