@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1585c26-113a-4cff-b80d-197263f7ae2e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Run_Batch_Prediction.sh" afterPath="$PROJECT_DIR$/Run_Batch_Prediction.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LearnTensorFlowChapter2 - TensorFlowMachineLearning.ipynb" afterPath="$PROJECT_DIR$/LearnTensorFlowChapter2 - TensorFlowMachineLearning.ipynb" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
